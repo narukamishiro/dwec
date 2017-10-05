@@ -8,7 +8,14 @@ function getLocation() {
 }
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
-
+	var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: latlon;
+        });
+	var marker = new google.maps.Marker({
+          position: latlon,
+          map: map
+        });
     var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
     +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyCuaX3NNquvrGSr-5hsJ8v7vhbRBJqYexg";
     document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
