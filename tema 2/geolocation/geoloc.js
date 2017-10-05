@@ -8,9 +8,9 @@ function getLocation() {
 }
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
-	var map = new google.maps.Map(document.getElementById('map'), {
+	var map = new google.maps.Map(document.getElementById('mapholder'), {
           zoom: 4,
-          center: latlon;
+          center: latlon
         });
 	var marker = new google.maps.Marker({
           position: latlon,
