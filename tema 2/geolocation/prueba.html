@@ -1,10 +1,18 @@
 <html>
-	<head></head>
+	<head>
+		<style>
+      #mapholder {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+	</head>
 	<body>
-		<h1 id="h"></h1>
-		<p id="demo"></p>
+		<h3>My Google Maps Demo</h3>
 		<div id="mapholder"></div>
-		<script src="geoloc.js">		
+		<script src="geoloc.js"></script>	
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuaX3NNquvrGSr-5hsJ8v7vhbRBJqYexg&callback=initMap">
 		</script>
 	</body>
 </html>

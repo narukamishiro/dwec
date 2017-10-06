@@ -1,25 +1,32 @@
 var x = document.getElementById("demo");
-function getLocation() {
+function getlocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        navigator.geolocation.getCurrentPosition(
+          function (position){
+            coords =  {
+              lng: position.coords.longitude,
+              lat: position.coords.latitude
+            };
+            initMap(coords);  //pasamos las coordenadas al metodo para crear el mapa
+            
+           
+          },function(error){console.log(error);});
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
-function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-	var map = new google.maps.Map(document.getElementById('mapholder'), {
+function initMap() {
+		 
+        var latlon = new google.maps.LatLng(coords.lat,coords.lng);
+        var map = new google.maps.Map(document.getElementById('mapholder'), {
           zoom: 4,
-          center: latlon
+          center: coords
         });
-	var marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
           position: latlon,
-          map: map
+          map: mapholder
         });
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyCuaX3NNquvrGSr-5hsJ8v7vhbRBJqYexg";
-    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-}
+      }
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
@@ -36,4 +43,4 @@ function showError(error) {
             break;
     }
 }
-getLocation();
+getlocation();
