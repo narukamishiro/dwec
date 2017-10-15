@@ -18,8 +18,8 @@ function initvideo(){
              window.webkitURL || 
              window.mozURL || 
              window.msURL;
- 
-	window.addEventListener('load', function() {
+	var button = document.querySelector('button');
+	window.addEventListener('click', function() {
    
 		navigator.getUserMedia({
 			video: true
