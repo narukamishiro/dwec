@@ -5,7 +5,7 @@ function gps(event){
 	var mnx=document.getElementById("px");
 	var mny=document.getElementById("py");
 	mnx.innerHTML="posicion x: "+event.screenX;
-	mny.text="posicion y: "+event.screenY;
+	mny.innerHTML="posicion y: "+event.screenY;
 }
 function createtb(){
 	var cod="<table id='tb' border='1'>";
@@ -23,13 +23,13 @@ function createtb(){
 }
 function pintv1(event){
 	if(event.shiftKey){
-		event.style.backgroundColor='#FF0253';
+		event.target.style.backgroundColor='blue';
 	}
 	if(event.ctrlKey){
-		event.style.backgroundColor='#FF1061';
+		event.target.style.backgroundColor='red';
 	}
 	if(event.wich==99){
-		event.style.backgroundColor='#FFFFFF';
+		event.target.style.backgroundColor='#FFFFFF';
 	}
 	if(event.wich==97){
 		for(z=1;z<=100;z++){
@@ -46,13 +46,13 @@ function pintv1(event){
 window.onclick=click;
 */
 // ejercicio 2
-//document.addEventListener("onmousemove",gps);
+//document.addEventListener("mousemove",gps);
 //window.onload;
 //ejercicio 4 & 5
-/*document.body.innerHTML=createtb();
+document.body.innerHTML=createtb();
 	for(z=1;z<=100;z++){
 	for(p=1;p<=100;p++){
 		n=100*(z-1)+p;
-		document.getElementById(n).addEventListener("onmousemove",pintv1);
+		document.getElementById(n).addEventListener("mousemove",pintv1);
 	}
-}*/
+}
