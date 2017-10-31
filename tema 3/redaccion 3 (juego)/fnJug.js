@@ -150,7 +150,6 @@ class blackjack(){
 		var rp="";
 		do{
 			sacarCartajg();
-			
 			rp=prompt("tu puntuacion hasta ahora es "+jug.getPuntuacion()+" ¿quieres sacar otra carta? (s/n)");
 		}while(jug.getPuntuacion()<21 & rp=="s");
 		do{
