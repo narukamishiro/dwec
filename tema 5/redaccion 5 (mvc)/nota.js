@@ -29,4 +29,13 @@ class nota{
 	function getTitle(){
 		return title;
 	}
+	function getMsj(){
+		return msj;
+	}
+	function getId(){
+		return id;
+	}
+	function setId(t){
+		id=t;
+	}
 }
