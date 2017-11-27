@@ -4,15 +4,15 @@ class nota{
 	var msj;
 	var date;
 	constructor(){
-		id=0;
-		title="prueba";
-		msj="esto es una prueba";
-		date=new Date;
+		this.id=0;
+		this.title="prueba";
+		this.msj="esto es una prueba";
+		this.date=new Date;
 	}
 	constructor(tit,men){
-		title=tit;
-		msj=men;
-		date=new Date;
+		this.title=tit;
+		this.msj=men;
+		this.date=new Date;
 	}
 	function getActiveTime(){
 		var cd=new Date;
@@ -21,10 +21,10 @@ class nota{
 		return cmin-pmin;
 	}
 	function setTitle(t){
-		title=t;
+		this.title=t;
 	}
 	function setmsj(t){
-		msj=t;
+		this.msj=t;
 	}
 	function getTitle(){
 		return title;
@@ -36,6 +36,6 @@ class nota{
 		return id;
 	}
 	function setId(t){
-		id=t;
+		this.id=t;
 	}
 }

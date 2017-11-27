@@ -1,7 +1,7 @@
 class collection{
 	var cnt;
 	constructor(){
-		cnt=new array();
+		this.cnt=new array();
 	}
 	function addNote(t,m){
 		var nt=new nota(t,m);
@@ -9,5 +9,12 @@ class collection{
 	}
 	function removeNote(po){
 		cnt.splice(po,1);
+	}
+	function getnote(t){
+		for(x=0;x<nt.length;x++){
+			if(nt[x].getTitle==t){
+				return nt[x];
+			}
+		}
 	}
 }
